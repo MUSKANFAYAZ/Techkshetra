@@ -56,7 +56,7 @@ const Hero = () => {
           <span className="text-sm text-blue-200 font-medium tracking-wide uppercase font-heading">IEEE-SJCE Presents</span>
         </div>
         
-        <h1 className="font-heading text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-4 text-glow leading-tight animate-fade-in [animation-delay:100ms] opacity-0" style={{ animationFillMode: "forwards" }}>
+        <h1 className="font-heading text-4xl min-[400px]:text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-4 text-glow leading-tight animate-fade-in [animation-delay:100ms] opacity-0 break-words" style={{ animationFillMode: "forwards" }}>
           TechKshetra
         </h1>
         
