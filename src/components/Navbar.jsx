@@ -43,14 +43,20 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-[#050A1A]/90 backdrop-blur-md shadow-lg border-b border-blue-500/10" : "bg-transparent backdrop-blur-sm"
+        scrolled
+          ? "bg-[#050A1A]/90 backdrop-blur-md shadow-lg border-b border-blue-500/10"
+          : "bg-transparent backdrop-blur-sm"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center gap-2">
-              <Cpu className="text-glow-blue w-6 h-6 sm:w-8 sm:h-8" />
+              <img
+                src="/ieeelogo.png"
+                alt="TechKshetra logo"
+                className="w-7 h-7 sm:w-9 sm:h-9 object-contain"
+              />
               <div>
                 <h1 className="font-heading text-xl sm:text-2xl font-bold text-white text-glow">
                   TechKshetra
@@ -61,7 +67,7 @@ const Navbar = () => {
               </div>
             </Link>
           </div>
-          
+
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-8">
               {navLinks.map((link) => (
@@ -83,20 +89,26 @@ const Navbar = () => {
               </a>
             </div>
           </div>
-          
+
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-300 hover:text-white focus:outline-none"
             >
-              {isOpen ? <X className="w-6 h-6 text-glow-blue" /> : <Menu className="w-6 h-6 text-glow-blue" />}
+              {isOpen ? (
+                <X className="w-6 h-6 text-glow-blue" />
+              ) : (
+                <Menu className="w-6 h-6 text-glow-blue" />
+              )}
             </button>
           </div>
         </div>
       </div>
 
       {/* Mobile menu */}
-      <div className={`md:hidden overflow-hidden transition-all duration-300 ${isOpen ? "max-h-96" : "max-h-0"}`}>
+      <div
+        className={`md:hidden overflow-hidden transition-all duration-300 ${isOpen ? "max-h-96" : "max-h-0"}`}
+      >
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-[#050A1A]/95 backdrop-blur-md border-b border-blue-500/20">
           {navLinks.map((link) => (
             <button
